@@ -1,0 +1,32 @@
+.custom-swiper {
+  perspective: 1000px;
+}
+
+.custom-swiper .swiper-slide {
+  transform: scale(0.8) rotateY(0deg);
+  opacity: 0.6;
+  transition: all 0.5s ease;
+}
+
+.custom-swiper .swiper-slide-prev {
+  transform: scale(0.9) rotateY(25deg);
+  opacity: 0.8;
+}
+
+.custom-swiper .swiper-slide-next {
+  transform: scale(0.9) rotateY(-25deg);
+  opacity: 0.8;
+}
+
+.custom-swiper .swiper-slide-active {
+  transform: scale(1.05) rotateY(0deg);
+  opacity: 1;
+  z-index: 10;
+}
+.custom-swiper .swiper-slide {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.custom-swiper .swiper-slide:hover {
+  transform: translateY(-8px) rotateY(5deg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
