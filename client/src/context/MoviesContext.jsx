@@ -15,20 +15,11 @@ export const MoviesProvider = ({ children }) => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
 
-  // curl --request GET \
-  //    --url 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc' \
-  //    --header 'accept: application/json'
-  // https://api.themoviedb.org/3/search/movie?query=avatar&language=en-US&page=1&include_adult=false&region=IN&year=2023&primary_release_year=2023
-  console.log("Adult value: " +adult)
-  const api1 =  `https://api.themoviedb.org/3/search/movie?query=${query}&language=${language}&page=${page}&include_adult=${adult}&region=${region}&year=${year}&primary_release_year=${primaryYear}`
-
-  const api2 = `https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=${page}`
-
+  const api =  `https://api.themoviedb.org/3/search/movie?query=${query}&language=${language}&page=${page}&include_adult=${adult}&region=${region}&year=${year}&primary_release_year=${primaryYear}`
     const fetchMovies = async () => {
       setLoading(true);
       setError(null);
-      // https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=${page}
-      const url = api1;
+      const url = api;
       const options = {
         method: "GET",
         headers: {
@@ -77,12 +68,6 @@ export const MoviesProvider = ({ children }) => {
   useEffect(() => {
     fetchMovies()
   }, [page,adult, region, year, primaryYear])
-
-  // useEffect(() => {
-  //   if(query.length === 0) {
-  //     setMovies([])
-  //   }
-  // },[query])
 
   return (
     <MoviesContext.Provider
