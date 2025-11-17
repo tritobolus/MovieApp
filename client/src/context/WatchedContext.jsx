@@ -10,7 +10,7 @@ export const WatchedProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const {userId} = useAuth();
 
-  // --- FETCH WATCHLIST IDs ---
+  // fetching watched movies id
   const getWatchedId = async () => {
     try {
       setLoading(true);
@@ -27,7 +27,7 @@ export const WatchedProvider = ({ children }) => {
     }
   };
 
-  // --- FETCH MOVIE DETAILS ---
+  // fetching the details of watched movies
   const getWatchedMovies = async () => {
     if (watchedMovieId.length === 0) {
       setWatchedMovie([]);
@@ -60,15 +60,6 @@ export const WatchedProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
-  
-//   useEffect(() => {
-//     if (userId) getWatchlistId();
-//   }, [userId]);
-  
-//   useEffect(() => {
-//     getWatchlistMovies();
-//   }, [watchlistMovieId]);
 
   return (
     <WatchedContext.Provider
