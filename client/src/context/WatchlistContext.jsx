@@ -10,7 +10,7 @@ export const WatchlistProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const {userId} = useAuth();
 
-  // --- FETCH WATCHLIST IDs ---
+  // fetching watchlist ids
   const getWatchlistId = async () => {
     try {
       setLoading(true);
@@ -27,7 +27,7 @@ export const WatchlistProvider = ({ children }) => {
     }
   };
 
-  // --- FETCH MOVIE DETAILS ---
+  // fetching movie dtails
   const getWatchlistMovies = async () => {
     if (watchlistMovieId.length === 0) {
       setWatchlistMovie([]);
@@ -60,15 +60,6 @@ export const WatchlistProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
-  
-//   useEffect(() => {
-//     if (userId) getWatchlistId();
-//   }, [userId]);
-  
-//   useEffect(() => {
-//     getWatchlistMovies();
-//   }, [watchlistMovieId]);
 
   return (
     <WatchlistContext.Provider
