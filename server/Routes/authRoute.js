@@ -29,7 +29,7 @@ router.post("/register", async (req, res) => {
     console.log(error);
     res.status(500).json({ message: "Internal server error" });
   } finally {
-    await db.end(); // Ensure the database connection is closed
+    await db.end(); 
   }
 });
 router.post("/login", async (req, res) => {
@@ -75,7 +75,7 @@ router.get('/verification', verifyUser, (req, res) => {
 
   router.get("/logout", (req, res) => {
   try {
-    res.clearCookie("token");  // ✅ this removes the cookie
+    res.clearCookie("token"); 
     return res.status(200).json({ status: "Success" });
   } catch (error) {
     console.log(error);
