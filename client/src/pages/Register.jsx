@@ -20,17 +20,12 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (formData.password !== formData.confirmPassword) {
-    //   toast.error("Passwords do not match!");
-    //   return;
-    // }
-
+    
     try {
       const res = await axios.post(
         "http://localhost:5000/auth/register",
         formData
       );
-    //   const data = res.json();
       if (res.status === 201) {
         console.log(res.data.message);
         toast.success("User registered successfully!");
@@ -55,9 +50,6 @@ const Register = () => {
           <h1 className="text-4xl font-extrabold text-blue-400 flex justify-center items-center gap-2">
             <UserPlus size={28} /> Register
           </h1>
-          {/* <p className="text-gray-400 mt-2">
-            Create your account to start your movie journey
-          </p> */}
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-2 md:space-y-4">
@@ -99,19 +91,6 @@ const Register = () => {
               required
             />
           </div>
-{/* 
-          <div>
-            <label className="block text-gray-300 mb-2">Confirm Password</label>
-            <input
-              type="password"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Confirm password"
-              required
-            />
-          </div> */}
 
           <button
             type="submit"
