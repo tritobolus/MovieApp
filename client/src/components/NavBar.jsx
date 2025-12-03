@@ -8,61 +8,15 @@ import { Link, useNavigate } from "react-router-dom";
 
   const NavBar = () => {
   const { auth, name } = useAuth();
+  
   const {
     home,
-    setHome,
-    favorite,
-    setFavorite,
-    watchlist,
-    setWatchlist,
     about,
-    setAbout,
     dashboard,
-    setDashboard,
   } = useNav();
+
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
-
-  const handleHome = () => {
-    setHome(true);
-    setFavorite(false);
-    setWatchlist(false);
-    setAbout(false);
-    setDashboard(false);
-    setMenuOpen(false);
-  };
-  const handleWatchlist = () => {
-    setWatchlist(true);
-    setHome(false);
-    setFavorite(false);
-    setAbout(false);
-    setDashboard(false);
-    setMenuOpen(false);
-  };
-  const handlefavorite = () => {
-    setFavorite(true);
-    setHome(false);
-    setWatchlist(false);
-    setAbout(false);
-    setDashboard(false);
-    setMenuOpen(false);
-  };
-  const handleAbout = () => {
-    setAbout(true);
-    setHome(false);
-    setFavorite(false);
-    setWatchlist(false);
-    setDashboard(false);
-    setMenuOpen(false);
-  };
-  const handleDashboard = () => {
-    setDashboard(true);
-    setAbout(false);
-    setHome(false);
-    setFavorite(false);
-    setWatchlist(false);
-    setMenuOpen(false);
-  };
 
   const logout = async () => {
     try {
@@ -100,7 +54,6 @@ import { Link, useNavigate } from "react-router-dom";
           <ul className="hidden md:flex space-x-6 font-medium items-center mr-20">
             <Link
               to="/"
-              onClick={handleHome}
               className={`items-center justify-center transition-all duration-300 ease-in-out rounded-2xl scale-105 p-1 px-2 hover:text-blue-400 ${
                 home ? "italic bg-blue-500 hover:text-white" : "bg-gray-800/70"
               }`}
@@ -110,7 +63,6 @@ import { Link, useNavigate } from "react-router-dom";
 
             <Link
               to="/dashboard"
-              onClick={handleDashboard}
               className={`items-center justify-center transition-colors duration-300 ease-in-out rounded-2xl scale-105 p-1 px-2 ${
                 dashboard
                   ? "italic bg-blue-500 text-white"
@@ -122,7 +74,6 @@ import { Link, useNavigate } from "react-router-dom";
 
             <Link
               to="/about"
-              onClick={handleAbout}
               className={`items-center justify-center transition-colors duration-300 ease-in-out rounded-2xl scale-105 p-1 px-2 ${
                 about
                   ? "italic bg-blue-500 text-white"
@@ -151,14 +102,6 @@ import { Link, useNavigate } from "react-router-dom";
               </Link>
             )}
           </div>
-
-          {/* Mobile Menu Button */}
-          {/* <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden focus:outline-none text-blue-400"
-          >
-            {menuOpen ? <X size={26} /> : <Menu size={26} />}
-          </button> */}
         </div>
       </nav>
 
@@ -171,7 +114,6 @@ import { Link, useNavigate } from "react-router-dom";
         <ul className="flex flex-col items-start text-white space-y-6 p-4 font-medium bg-gray-900/70 backdrop-blur-md border-l border-gray-800 rounded-l-2xl shadow-lg text-right">
           <Link
             to="/"
-            onClick={handleHome}
             className={`hover:text-blue-400 transition-all sm:hidden ${
               home
                 ? "rounded-xl scale-105 italic hover:text-white bg-blue-500 p-1 px-2 "
@@ -180,31 +122,9 @@ import { Link, useNavigate } from "react-router-dom";
           >
             Home
           </Link>
-          {/* <Link
-            to="/favorites"
-            onClick={handlefavorite}
-            className={`hover:text-blue-400 transition-all ${
-              favorite
-                ? "rounded-xl scale-105 italic hover:text-white bg-blue-500 p-1 px-2"
-                : ""
-            }`}
-          >
-            Favorites
-          </Link> */}
-          {/* <Link
-            to="/watchlist"
-            onClick={handleWatchlist}
-            className={`hover:text-blue-400 transition-all ${
-              watchlist
-                ? "rounded-xl scale-105 italic hover:text-white bg-blue-500 p-1 px-2"
-                : ""
-            }`}
-          >
-            Watchlist
-          </Link> */}
+
           <Link
             to="/about"
-            onClick={handleAbout}
             className={`hover:text-blue-400 transition-all sm:hidden ${
               about
                 ? "rounded-xl scale-105 italic hover:text-white bg-blue-500 p-1 px-2 "
@@ -218,7 +138,6 @@ import { Link, useNavigate } from "react-router-dom";
             <>
               <Link
                 to="/dashboard"
-                onClick={handleDashboard}
                 className={`hover:text-blue-400 transition-all sm:hidden ${
               dashboard
                 ? "rounded-xl scale-105 italic hover:text-white bg-blue-500 p-1 px-2 "

@@ -202,8 +202,8 @@ export default function Overview() {
       >
         <div className="flex justify-between items-center mb-2">
           <h3 className="text-2xl font-semibold text-white">Recent Activity</h3>
-          <button className="text-blue-400 text-sm hover:underline">
-            See All →
+          <button onClick={() => navigate("./all-activity")} className="text-blue-400 text-sm hover:underline">
+            See All
           </button>
         </div>
 

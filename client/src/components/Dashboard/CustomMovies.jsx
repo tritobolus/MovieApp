@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import AddCustomMovieForm from "./Dashboard/AddCustomeMovieForm";
+import AddCustomMovieForm from "./AddCustomeMovieForm";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { Trash2, Eye, PenLine } from "lucide-react";
 

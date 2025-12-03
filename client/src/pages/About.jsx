@@ -56,9 +56,6 @@ const About = () => {
           <li>Cloud storage for movie posters.</li>
         </ul>
 
-        <p className="mt-10 text-center text-gray-400">
-          © {new Date().getFullYear()} My Movie Dashboard — Built by tritobolus
-        </p>
       </div>
     </>
   );

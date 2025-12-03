@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import axios from "axios";
 import { toast } from "react-toastify";
-import Loading from "../components/Loading";
+import Loading from "../Loading";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Trash2, BookmarkPlus, Eye, CircleCheckBig } from "lucide-react";
-import { favoriteContext } from "../context/FavoriteContext";
+import { favoriteContext } from "../../context/FavoriteContext";
 
 const Favorites = () => {
   const { auth, checkAuth, userId } = useAuth();

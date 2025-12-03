@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/Dashboard/Sidebar";
 import NavBar from "../components/NavBar";
 
 const Dashboard = () => {

@@ -12,20 +12,20 @@ import { WatchedProvider } from "./context/WatchedContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <NavProvider>
-      <AuthProvider>
-        <MoviesProvider>
-          <FavoriteProvider>
-            <WatchlistProvider>
-              <WatchedProvider>
-                <BrowserRouter>
-                <App />
+    <AuthProvider>
+      <MoviesProvider>
+        <FavoriteProvider>
+          <WatchlistProvider>
+            <WatchedProvider>
+              <BrowserRouter>
+                <NavProvider>
+                  <App />
+                </NavProvider>
               </BrowserRouter>
-              </WatchedProvider>
-            </WatchlistProvider>
-          </FavoriteProvider>
-        </MoviesProvider>
-      </AuthProvider>
-    </NavProvider>
+            </WatchedProvider>
+          </WatchlistProvider>
+        </FavoriteProvider>
+      </MoviesProvider>
+    </AuthProvider>
   </StrictMode>
 );

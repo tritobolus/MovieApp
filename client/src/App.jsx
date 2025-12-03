@@ -9,11 +9,12 @@ import About from "./pages/About";
 
 // Dashboard nested components
 import Watched from "./components/Dashboard/Watched";
-import Overview from "./components/Overview";
-import Favorites from "./components/Favorites";
-import Watchlist from "./components/Watchlist";
-import CustomMovies from "./components/CustomMovies";
+import Overview from "./components/Dashboard/Overview";
+import Favorites from "./components/Dashboard/Favorites";
+import Watchlist from "./components/Dashboard/Watchlist";
+import CustomMovies from "./components/Dashboard/CustomMovies";
 import Layout from "./pages/Layout";
+import { AllActivity } from "./components/Dashboard/AllActivity";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="watched" element={<Watched />} />
         <Route path="watchlist" element={<Watchlist />} />
         <Route path="custom" element={<CustomMovies />} />
+        <Route path="all-activity" element={<AllActivity />} />
       </Route>
     </Routes>
   );

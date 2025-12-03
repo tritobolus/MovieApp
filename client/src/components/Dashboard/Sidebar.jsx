@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Heart, Eye, Film, SquarePlus, ChevronsRight, Menu, X, User, CircleCheckBig } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Sidebar() {
   const location = useLocation();

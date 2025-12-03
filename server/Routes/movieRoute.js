@@ -208,7 +208,30 @@ router.delete("/removewatchlist", async (req, res) => {
   }
 });
 
+//get recent activity
 router.get("/activity", verifyUser, async (req, res) => {
+  const db = await createConnection();
+  const userId = req.userId;
+  console.log("user id")
+  console.log(userId)
+
+  try {
+    console.log("entered trycatch activty")
+    const sql = "SELECT * FROM activity  WHERE user_id = ? ORDER BY created_at DESC limit 5";
+    
+      const [rows] = await db.query(sql, [userId])
+      console.log(rows[0])
+      return res.status(200).json({message: "successfully fetch activity data", data: rows})
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({error:error})
+  } finally {
+    await db.end();
+  }
+});
+
+//get all activity
+router.get("/allActivity", verifyUser, async (req, res) => {
   const db = await createConnection();
   const userId = req.userId;
   console.log("user id")
